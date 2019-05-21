@@ -1,0 +1,5 @@
+stepsdefs\login.class
+configurations\utils.class
+stepsdefs\basic.class
+configurations\hooks.class
+TestRunner.class

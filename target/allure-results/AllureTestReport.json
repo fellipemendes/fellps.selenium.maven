@@ -1,0 +1,86 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4471505987,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.TestInitialize()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Realizar Login Gmail usuário incorreto",
+        "description": "",
+        "id": "login-gmail;realizar-login-gmail-usuário-incorreto",
+        "after": [
+          {
+            "result": {
+              "duration": 779597124,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.TearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3563903778,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I access página de login do Gmail",
+            "match": {
+              "location": "login.i_access_página_de_login_do_Gmail()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2082770140,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "realizei login no Gmail com usuário incorreto",
+            "match": {
+              "location": "login.realizei_login_no_Gmail_com_usuário_incorreto()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1064661308,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "deverá apresentar erro de usuário incorreto",
+            "match": {
+              "location": "login.deverá_apresentar_erro_de_usuário_incorreto()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@login"
+          }
+        ]
+      }
+    ],
+    "name": "login Gmail",
+    "description": "As a [role]\r\nI want [feature]\r\nSo that [benefit/business reason]",
+    "id": "login-gmail",
+    "keyword": "Feature",
+    "uri": "login.feature"
+  }
+]

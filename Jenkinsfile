@@ -10,7 +10,7 @@ node('master') {
             sh '/Applications/apache-maven-3.6.1/bin/mvn -Dtest=TestRunner clean test'
 	      }
 	} finally {
-  		archiveArtifacts 'target/**/*'
+  		archiveArtifacts artifacts: 'target/**/*'
   	}
 
     stage('reports') {

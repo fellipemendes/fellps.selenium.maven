@@ -7,9 +7,7 @@ node('master') {
 
     try{
 	    stage('Run tests') {
-	  		withMaven(maven: 'Maven 3') {
-                    sh 'mvn -Dtest=MainRunner clean test'
-	        	}
+            sh 'mvn -Dtest=MainRunner clean test'
 	      }
 	} finally {
   		archiveArtifacts 'target/**/*'

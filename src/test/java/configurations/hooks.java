@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.OutputType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class hooks {
     public static WebDriver driver;
@@ -17,6 +18,7 @@ public class hooks {
     @Before
     public void TestInitialize() {
         try {
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             new Dimension(1366, 768);
         } catch (Exception e) {

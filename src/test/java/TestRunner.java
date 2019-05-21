@@ -1,6 +1,7 @@
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.api.testng.CucumberFeatureWrapper;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -22,7 +23,8 @@ public class TestRunner {
 
         @BeforeClass(alwaysRun = true)
         public void setUpClass() throws Exception {
-                testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+            WebDriverManager.chromedriver().setup();
+            testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         }
 
         @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")

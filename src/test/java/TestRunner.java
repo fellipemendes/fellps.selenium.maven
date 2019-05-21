@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
         dryRun = false,
         features = "src/test/resources/features",
         glue = {"configurations", "stepsdefs"},
-        tags = {},
+        tags = {"@oi"},
         plugin = {
                 "pretty",
                 "json:target/allure-results/AllureTestReport.json",

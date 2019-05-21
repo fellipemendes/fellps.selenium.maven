@@ -33,7 +33,7 @@ public class login {
         driver.findElement(By.id("identifierId")).sendKeys("123");
         driver.findElement(By.xpath("//*[@id='identifierNext']/content/span")).click();
         Thread.sleep(3000);
-        oUtils.waitElementToBeClickable("name", "password");
+        oUtils.waitPresenceOfElementLocated("name", "password");
         driver.findElement(By.name("password")).sendKeys("123");
         driver.findElement(By.xpath("//*[@id='passwordNext']/content/span")).click();
         hooks.capture("Dados Login");

@@ -42,7 +42,8 @@ public class login {
     @Step
     @Then("^deverá apresentar erro de usuário incorreto$")
     public void deverá_apresentar_erro_de_usuário_incorreto() throws Throwable {
-        oUtils.waitVisibilityOfElementLocated("xpath", "//*[@id='password']/div[2]/div[2]/div");
+        Thread.sleep(5000);
+        //oUtils.waitVisibilityOfElementLocated("xpath", "//*[@id='password']/div[2]/div[2]/div");
         WebElement retornoErro = driver.findElement(By.xpath("//*[@id='password']/div[2]/div[2]/div"));
         assertThat(retornoErro.getText()).isEqualTo("Senha incorreta. Tente novamente ou clique em \"Esqueceu a senha?\" para redefini-la.");
         hooks.capture("Dados Login incorreto");

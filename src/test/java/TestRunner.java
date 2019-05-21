@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
         dryRun = false,
         features = "src/test/resources/features",
         glue = {"configurations", "stepsdefs"},
-        tags = {"@login"},
+        tags = {},
         plugin = {
                 "pretty",
                 "json:target/allure-results/AllureTestReport.json",

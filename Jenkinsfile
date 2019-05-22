@@ -7,7 +7,7 @@ node('master') {
 
     try{
 	    stage('Run tests') {
-	    withMaven(maven: 'apache-maven-3.6.1') {
+	    withMaven(maven: 'Maven') {
             sh 'mvn -Dtest=TestRunner clean test -Dwebdriver.type=remote -Dwebdriver.url=http://192.168.99.100:4444/wd/hub -Dwebdriver.cap.browserName=chrome'
 	      }
       }

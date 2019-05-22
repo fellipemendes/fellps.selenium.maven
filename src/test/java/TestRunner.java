@@ -15,16 +15,16 @@ import org.testng.annotations.*;
         })
 
 public class TestRunner {
-/*
+
         private TestNGCucumberRunner testNGCucumberRunner;
 
-
+/*
         @BeforeClass
         @Parameters("browser")
         public void preCondicao(@Optional("chrome") String browser){
                 //WebDriverManager.chromedriver().setup();
         }
-
+*/
         @BeforeClass(alwaysRun = true)
         public void setUpClass() throws Exception {
             //WebDriverManager.chromedriver().setup();
@@ -45,5 +45,4 @@ public class TestRunner {
         public void tearDownClass() throws Exception {
                 testNGCucumberRunner.finish();
         }
-*/
 }

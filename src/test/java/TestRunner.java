@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
+import configurations.hooks;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -56,7 +57,8 @@ public class TestRunner {
 */
         @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
         public void feature(CucumberFeatureWrapper cucumberFeature) {
-                testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+            hooks.getInstance().getDriver();
+            testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
         }
 
         @DataProvider

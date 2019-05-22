@@ -34,7 +34,7 @@ public class TestRunner {
 
 
     @BeforeClass(alwaysRun = true)
-    @Parameters(value={"browser"})
+    @Parameters(value={"chrome"})
     public void setupTest (String browser) throws MalformedURLException {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         DesiredCapabilities capabilities = new DesiredCapabilities();

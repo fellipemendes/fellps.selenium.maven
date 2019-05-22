@@ -75,6 +75,7 @@ public class hooks {
     }
     @BeforeTest
     public void start() {
+        System.out.println("-----------2.1");
         getInstance().getDriver();
     }
 

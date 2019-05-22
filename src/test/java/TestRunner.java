@@ -57,6 +57,7 @@ public class TestRunner {
 */
         @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
         public void feature(CucumberFeatureWrapper cucumberFeature) {
+            System.out.println("-----------2.0");
             testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
         }
 

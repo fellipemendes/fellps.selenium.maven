@@ -25,15 +25,21 @@ public class basic{
     @Description("Googleeeeee")
     @Given("^I access Google$")
     public void i_access_Google() throws Throwable {
+        System.out.println("-----------9");
         driver.navigate().to("https://www.google.com/");
+        System.out.println("-----------9.1");
         oUtils.waitVisibilityOfElementLocated("name", "q");
+        System.out.println("-----------9.2");
         hooks.capture("google's search page");
+        System.out.println("-----------9.3");
     }
 
     @Step
     @Then("^The main page will show up$")
     public void the_main_page_will_show_up() throws Throwable {
+        System.out.println("-----------9.4");
         driver.findElement(By.name("q")).sendKeys("SELENIUM");
+        System.out.println("-----------9.5");
         driver.findElement(By.name("q")).click();
         Thread.sleep(2000);
     }

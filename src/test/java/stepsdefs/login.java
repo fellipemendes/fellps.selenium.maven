@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import io.qameta.allure.Step;
 import static org.assertj.core.api.Assertions.*;
 
-@Test
+
 public class login {
 
     static WebDriver driver = hooks.getInstance().getDriver();

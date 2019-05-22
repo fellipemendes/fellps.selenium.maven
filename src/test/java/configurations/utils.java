@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class utils {
 
-    static WebDriver driver = hooks.driver;
+    static WebDriver driver = hooks.getInstance().getDriver();
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 
     public void waitElementToBeClickable (String locator, String element) {

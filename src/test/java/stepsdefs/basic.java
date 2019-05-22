@@ -17,7 +17,7 @@ import io.qameta.allure.Story;
 @Feature("Google's Search")
 public class basic{
 
-    static WebDriver driver = hooks.driver;
+    static WebDriver driver = hooks.getInstance().getDriver();
     static utils oUtils = new utils();
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 

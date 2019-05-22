@@ -23,7 +23,24 @@ import java.net.URL;
 public class hooks {
     //public static WebDriver driver;
 
-    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+    static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+
+    public hooks()
+    {
+        //Hooks.driver = (ThreadLocal<WebDriver>) driver;
+        //Do-nothing..Do not allow to initialize this class from outside
+    }
+    public static hooks instance = new hooks();
+
+    public static hooks getInstance()
+    {
+        return instance;
+    }
+
+    public WebDriver getDriver() {
+        //Get driver from ThreadLocalMap
+        return driver.get();
+    }
 
     @BeforeMethod
     @Parameters(value={"browser"})
@@ -37,10 +54,9 @@ public class hooks {
         driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
     }
 
-    public WebDriver getDriver() {
-        //Get driver from ThreadLocalMap
-        return driver.get();
-    }
+
+
+
 
     @AfterMethod
     public void tearDown() throws Exception {

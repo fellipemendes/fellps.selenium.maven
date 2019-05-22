@@ -14,10 +14,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -63,21 +61,17 @@ public class hooks {
         return driver.get();
     }
 
-    @BeforeMethod
     @Parameters(value={"browser"})
+    @BeforeClass(alwaysRun = true)
     public void setupTest (String browser) throws MalformedURLException{
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         //Set BrowserName
         capabilities.setCapability("browserName", browser);
-
+        System.out.println("-----------1");
         //Set Browser to ThreadLocalMap
         driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
     }
-
-
-
-
 
     @AfterMethod
     public void tearDown() throws Exception {
@@ -90,12 +84,10 @@ public class hooks {
         driver.remove();
     }
 
-
-
     @Before
     public void TestInitialize() {
         try {
-            WebDriverManager.chromedriver().setup();
+            //WebDriverManager.chromedriver().setup();
             new Dimension(1366, 768);
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());

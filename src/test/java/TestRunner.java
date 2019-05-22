@@ -23,6 +23,7 @@ import java.net.URL;
 public class TestRunner {
 
     private TestNGCucumberRunner testNGCucumberRunner;
+    private String featureName;
 
     @BeforeClass(alwaysRun = true)
     @Parameters(value={"browser"})
@@ -37,12 +38,18 @@ public class TestRunner {
         //driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
     }
 
+    @BeforeMethod
+    public void beforeMethod(Object[] params) {
+        CucumberFeatureWrapper cucumberFeature = (CucumberFeatureWrapper) params[0];
+        featureName = cucumberFeature.getCucumberFeature().getGherkinFeature().getName();
+    }
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
         System.out.println("-----------2.0");
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
+
 
     @DataProvider
     public Object[][] features() {

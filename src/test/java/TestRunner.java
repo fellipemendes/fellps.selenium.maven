@@ -57,7 +57,6 @@ public class TestRunner {
 */
         @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
         public void feature(CucumberFeatureWrapper cucumberFeature) {
-            hooks.getInstance();
             testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
         }
 

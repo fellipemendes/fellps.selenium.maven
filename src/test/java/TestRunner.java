@@ -2,7 +2,12 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 @CucumberOptions(
         dryRun = false,
@@ -24,7 +29,23 @@ public class TestRunner {
         public void preCondicao(@Optional("chrome") String browser){
                 //WebDriverManager.chromedriver().setup();
         }
+
 */
+
+    @Parameters(value={"browser"})
+    @BeforeClass(alwaysRun = true)
+    public void setupTest (String browser) throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        //Set BrowserName
+        capabilities.setCapability("browserName", browser);
+        System.out.println("-----------1");
+        //Set Browser to ThreadLocalMap
+        //driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
+    }
+
+
+
         @BeforeClass(alwaysRun = true)
         public void setUpClass() throws Exception {
             //WebDriverManager.chromedriver().setup();

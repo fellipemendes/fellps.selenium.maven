@@ -28,11 +28,11 @@ public class hooks {
         public RemoteWebDriver initialValue()
         {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-//	    	 try {
-//				driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities));
-//			} catch (MalformedURLException e) {
-//				e.printStackTrace();
-//			}
+	    	 try {
+                 driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("--headless", "window-size=1366,768", "--no-sandbox");
             options.addArguments("window-size=1366,768");
@@ -59,18 +59,6 @@ public class hooks {
     public WebDriver getDriver() {
         //Get driver from ThreadLocalMap
         return driver.get();
-    }
-
-    @Parameters(value={"browser"})
-    @BeforeClass(alwaysRun = true)
-    public void setupTest (String browser) throws MalformedURLException{
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-
-        //Set BrowserName
-        capabilities.setCapability("browserName", browser);
-        System.out.println("-----------1");
-        //Set Browser to ThreadLocalMap
-        driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
     }
 
     @AfterMethod

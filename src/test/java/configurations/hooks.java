@@ -22,17 +22,31 @@ import java.net.URL;
 public class hooks {
     //public static WebDriver driver;
 
-    static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>()
+    public hooks()
+    {
+        //Hooks.driver = (ThreadLocal<WebDriver>) driver;
+        //Do-nothing..Do not allow to initialize this class from outside
+    }
+    private static hooks instance = new hooks();
+
+    public static hooks getInstance()
+    {
+        return instance;
+    }
+
+    ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>()
     {
         @Override
         public RemoteWebDriver initialValue()
         {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-	    	 try {
+	    	/*
+            try {
                  driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
+	    	 */
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("--headless", "window-size=1366,768", "--no-sandbox");
             options.addArguments("window-size=1366,768");
@@ -43,18 +57,6 @@ public class hooks {
             //return new ChromeDriver(); // can be replaced with other browser drivers
         }
     };
-
-    public hooks()
-    {
-        //Hooks.driver = (ThreadLocal<WebDriver>) driver;
-        //Do-nothing..Do not allow to initialize this class from outside
-    }
-    public static hooks instance = new hooks();
-
-    public static hooks getInstance()
-    {
-        return instance;
-    }
 
     public WebDriver getDriver() {
         //Get driver from ThreadLocalMap

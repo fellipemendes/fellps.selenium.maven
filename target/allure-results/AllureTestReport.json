@@ -6,7 +6,79 @@
         "before": [
           {
             "result": {
-              "duration": 4471505987,
+              "duration": 75109896,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.TestInitialize()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "access Google",
+        "description": "",
+        "id": "basic-access-google;access-google",
+        "after": [
+          {
+            "result": {
+              "duration": 173037,
+              "status": "passed"
+            },
+            "match": {
+              "location": "hooks.TearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8799008869,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I access Google",
+            "match": {
+              "location": "basic.i_access_Google()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2169614156,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "The main page will show up",
+            "match": {
+              "location": "basic.the_main_page_will_show_up()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@oi"
+          }
+        ]
+      }
+    ],
+    "name": "basic access Google",
+    "description": "As a [role]\nI want [feature]\nSo that [benefit/business reason]",
+    "id": "basic-access-google",
+    "keyword": "Feature",
+    "uri": "basic.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 26074,
               "status": "passed"
             },
             "match": {
@@ -21,7 +93,7 @@
         "after": [
           {
             "result": {
-              "duration": 779597124,
+              "duration": 16987,
               "status": "passed"
             },
             "match": {
@@ -34,7 +106,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3563903778,
+              "duration": 3158092975,
               "status": "passed"
             },
             "line": 7,
@@ -46,7 +118,7 @@
           },
           {
             "result": {
-              "duration": 2082770140,
+              "duration": 6008841478,
               "status": "passed"
             },
             "line": 8,
@@ -58,7 +130,7 @@
           },
           {
             "result": {
-              "duration": 1064661308,
+              "duration": 6586235818,
               "status": "passed"
             },
             "line": 9,
@@ -78,7 +150,7 @@
       }
     ],
     "name": "login Gmail",
-    "description": "As a [role]\r\nI want [feature]\r\nSo that [benefit/business reason]",
+    "description": "As a [role]\nI want [feature]\nSo that [benefit/business reason]",
     "id": "login-gmail",
     "keyword": "Feature",
     "uri": "login.feature"

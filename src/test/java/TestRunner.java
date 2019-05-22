@@ -53,12 +53,12 @@ public class TestRunner {
             //WebDriverManager.chromedriver().setup();
             testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         }
-
+*/
         @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
         public void feature(CucumberFeatureWrapper cucumberFeature) {
                 testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
         }
-*/
+
         @DataProvider
         public Object[][] features() {
                 return testNGCucumberRunner.provideFeatures();

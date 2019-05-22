@@ -82,6 +82,7 @@ public class hooks {
     @Before
     public void TestInitialize() {
         try {
+            System.out.println("-----------5");
             //WebDriverManager.chromedriver().setup();
             new Dimension(1366, 768);
         } catch (Exception e) {

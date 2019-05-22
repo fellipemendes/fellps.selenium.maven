@@ -27,7 +27,7 @@ public class TestRunner {
 */
         @BeforeClass(alwaysRun = true)
         public void setUpClass() throws Exception {
-            WebDriverManager.chromedriver().setup();
+            //WebDriverManager.chromedriver().setup();
             testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         }
 

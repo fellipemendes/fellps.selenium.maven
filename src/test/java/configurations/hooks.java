@@ -73,11 +73,7 @@ public class hooks {
         //Remove the ThreadLocalMap element
         driver.remove();
     }
-    @BeforeTest
-    public void start() {
-        System.out.println("-----------2.1");
-        getInstance().getDriver();
-    }
+
 
     @Before
     public void TestInitialize() {

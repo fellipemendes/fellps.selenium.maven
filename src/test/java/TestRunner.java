@@ -22,17 +22,7 @@ import java.net.URL;
 
 public class TestRunner {
 
-        private TestNGCucumberRunner testNGCucumberRunner;
-
-/*
-        @BeforeClass
-        @Parameters("browser")
-        public void preCondicao(@Optional("chrome") String browser){
-                //WebDriverManager.chromedriver().setup();
-        }
-
-*/
-
+    private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
     @Parameters(value={"browser"})
@@ -46,28 +36,25 @@ public class TestRunner {
         //Set Browser to ThreadLocalMap
         //driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
     }
+    @BeforeTest
+    public void start() {
+        System.out.println("-----------2.1");
+        hooks.getInstance().getDriver();
+    }
 
+    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
+    public void feature(CucumberFeatureWrapper cucumberFeature) {
+        System.out.println("-----------2.0");
+        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+    }
 
-/*
-        @BeforeClass(alwaysRun = true)
-        public void setUpClass() throws Exception {
-            //WebDriverManager.chromedriver().setup();
-            testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-        }
-*/
-        @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
-        public void feature(CucumberFeatureWrapper cucumberFeature) {
-            System.out.println("-----------2.0");
-            testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-        }
+    @DataProvider
+    public Object[][] features() {
+            return testNGCucumberRunner.provideFeatures();
+    }
 
-        @DataProvider
-        public Object[][] features() {
-                return testNGCucumberRunner.provideFeatures();
-        }
-
-        @AfterClass(alwaysRun = true)
-        public void tearDownClass() throws Exception {
-                testNGCucumberRunner.finish();
-        }
+    @AfterClass(alwaysRun = true)
+    public void tearDownClass() throws Exception {
+            testNGCucumberRunner.finish();
+    }
 }

@@ -15,18 +15,19 @@ import org.testng.annotations.*;
         })
 
 public class TestRunner {
-
+/*
         private TestNGCucumberRunner testNGCucumberRunner;
+
 
         @BeforeClass
         @Parameters("browser")
         public void preCondicao(@Optional("chrome") String browser){
-                WebDriverManager.chromedriver().setup();
+                //WebDriverManager.chromedriver().setup();
         }
-/*
+
         @BeforeClass(alwaysRun = true)
         public void setUpClass() throws Exception {
-            WebDriverManager.chromedriver().setup();
+            //WebDriverManager.chromedriver().setup();
             testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         }
 
@@ -39,10 +40,10 @@ public class TestRunner {
         public Object[][] features() {
                 return testNGCucumberRunner.provideFeatures();
         }
-*/
+
         @AfterClass(alwaysRun = true)
         public void tearDownClass() throws Exception {
                 testNGCucumberRunner.finish();
         }
-
+*/
 }

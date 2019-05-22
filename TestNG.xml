@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="BDD Test Suite" verbose="1" parallel="classes" thread-count="99" configfailurepolicy="continue">
-    <test name="Testes Paralelos">
+<suite name="BDD Test Suite" verbose="1" parallel="tests" thread-count="99" configfailurepolicy="continue">
+    <test name="Testes Paralelos" parallel="methods">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="TestRunner"/>

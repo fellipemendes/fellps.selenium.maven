@@ -11,15 +11,54 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.OutputType;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class hooks {
-    public static WebDriver driver;
+    //public static WebDriver driver;
+
+    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+
+    @BeforeMethod
+    @Parameters(value={"browser"})
+    public void setupTest (String browser) throws MalformedURLException{
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        //Set BrowserName
+        capabilities.setCapability("browserName", browser);
+
+        //Set Browser to ThreadLocalMap
+        driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
+    }
+
+    public WebDriver getDriver() {
+        //Get driver from ThreadLocalMap
+        return driver.get();
+    }
+
+    @AfterMethod
+    public void tearDown() throws Exception {
+        getDriver().quit();
+    }
+
+    @AfterClass
+    void terminate () {
+        //Remove the ThreadLocalMap element
+        driver.remove();
+    }
+
+
 
     @Before
     public void TestInitialize() {
         try {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            //WebDriverManager.chromedriver().setup();
             new Dimension(1366, 768);
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());
@@ -35,7 +74,7 @@ public class hooks {
                 e.printStackTrace();
             }
         }
-        driver.quit();
+        //driver.quit();
     }
 
     public static byte[] screenShot() throws InterruptedException {

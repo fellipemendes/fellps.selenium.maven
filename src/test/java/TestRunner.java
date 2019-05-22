@@ -32,8 +32,9 @@ public class TestRunner {
 
 */
 
-    @Parameters(value={"browser"})
+
     @BeforeClass(alwaysRun = true)
+    @Parameters(value={"browser"})
     public void setupTest (String browser) throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -45,13 +46,13 @@ public class TestRunner {
     }
 
 
-
+/*
         @BeforeClass(alwaysRun = true)
         public void setUpClass() throws Exception {
             //WebDriverManager.chromedriver().setup();
             testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         }
-
+*/
         @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
         public void feature(CucumberFeatureWrapper cucumberFeature) {
                 testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());

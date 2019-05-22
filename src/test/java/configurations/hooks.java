@@ -40,13 +40,13 @@ public class hooks {
         public RemoteWebDriver initialValue()
         {
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-	    	/*
+
             try {
                  driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
-	    	 */
+
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("--headless", "window-size=1366,768", "--no-sandbox");
             options.addArguments("window-size=1366,768");
@@ -81,7 +81,7 @@ public class hooks {
     @Before
     public void TestInitialize() {
         try {
-            WebDriverManager.chromedriver().setup();
+            //WebDriverManager.chromedriver().setup();
             new Dimension(1366, 768);
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());

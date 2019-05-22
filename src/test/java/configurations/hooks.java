@@ -11,6 +11,7 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.OutputType;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
@@ -23,7 +24,27 @@ import java.net.URL;
 public class hooks {
     //public static WebDriver driver;
 
-    static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+    static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>()
+    {
+        @Override
+        public RemoteWebDriver initialValue()
+        {
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//	    	 try {
+//				driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities));
+//			} catch (MalformedURLException e) {
+//				e.printStackTrace();
+//			}
+            ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--headless", "window-size=1366,768", "--no-sandbox");
+            options.addArguments("window-size=1366,768");
+
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+            return new ChromeDriver(options); // can be replaced with other browser drivers
+            //return new InternetExplorerDriver();
+            //return new ChromeDriver(); // can be replaced with other browser drivers
+        }
+    };
 
     public hooks()
     {

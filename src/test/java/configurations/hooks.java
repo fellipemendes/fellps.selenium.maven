@@ -95,7 +95,7 @@ public class hooks {
     }
 
     @After
-    public void TearDownTest(Scenario scenario) throws InterruptedException {
+    public void TearDownTest(Scenario scenario) {
         if (scenario.isFailed()) {
             try {
                 capture("Falha");
@@ -106,14 +106,14 @@ public class hooks {
         //driver.quit();
     }
 
-    public static byte[] screenShot() throws InterruptedException {
+    public static byte[] screenShot() {
         byte[] screenshot;
-        screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        screenshot = ((TakesScreenshot) hooks.getInstance().getDriver()).getScreenshotAs(OutputType.BYTES);
         return screenshot;
     }
 
     @Attachment(value = "{namePrint}", type="image/jpg")
-    public static byte[] capture(String namePrint) throws InterruptedException {
+    public static byte[] capture(String namePrint) {
         return screenShot();
     }
 }

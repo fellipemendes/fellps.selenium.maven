@@ -95,7 +95,7 @@ public class hooks {
     @Before
     public void TestInitialize() {
         try {
-            //WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();
             new Dimension(1366, 768);
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());

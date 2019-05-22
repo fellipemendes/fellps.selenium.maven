@@ -14,7 +14,7 @@ import java.net.URL;
         dryRun = false,
         features = "src/test/resources/features",
         glue = {"configurations", "stepsdefs"},
-        tags = {},
+        tags = {"@basic"},
         plugin = {
                 "pretty",
                 "json:target/allure-results/AllureTestReport.json",

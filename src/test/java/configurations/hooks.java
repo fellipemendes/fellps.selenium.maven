@@ -56,7 +56,7 @@ public class hooks {
         return driver.get();
     }
 
-    @BeforeMethod(alwaysRun = true)
+    @Before
     @Parameters(value={"browser"})
     public void setupTest (@Optional("chrome")String browser) {
         System.out.println("--------PASSOU BEFORE METHOD 1-----------------------");
@@ -79,7 +79,7 @@ public class hooks {
         //Remove the ThreadLocalMap element
         driver.remove();
     }
-
+/*
     @Before
     public void TestInitialize() {
         try {
@@ -89,7 +89,7 @@ public class hooks {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());
         }
     }
-
+*/
     @After
     public void TearDownTest(Scenario scenario) {
         if (scenario.isFailed()) {

@@ -34,14 +34,14 @@ public class TestRunner {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", browser);
     }
-/*
+
     @BeforeMethod
     public void beforeMethod(Object[] params) {
         CucumberFeatureWrapper cucumberFeature = (CucumberFeatureWrapper) params[0];
         featureName = cucumberFeature.getCucumberFeature().getGherkinFeature().getName();
     }
 
-    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "scenarios")
+    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
@@ -50,16 +50,6 @@ public class TestRunner {
     @DataProvider
     public Object[][] features() {
             return testNGCucumberRunner.provideFeatures();
-    }
-*/
-    @Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
-    public void scenario(CucumberFeatureWrapper cucumberFeature) {
-        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-    }
-
-    @DataProvider(name = "scenarios", parallel = true)
-    public Object[][] scenarios() {
-        return testNGCucumberRunner.provideFeatures();
     }
 
     @AfterClass(alwaysRun = true)

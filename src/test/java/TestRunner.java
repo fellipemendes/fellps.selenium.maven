@@ -47,7 +47,7 @@ public class TestRunner {
     }
 
 
-    @DataProvider
+    @DataProvider(parallel = true)
     public Object[][] features() {
             return testNGCucumberRunner.provideFeatures();
     }

@@ -33,8 +33,16 @@ public class basic{
     @Step
     @Then("^The main page will show up$")
     public void the_main_page_will_show_up() throws Throwable {
-        driver.findElement(By.name("q")).sendKeys("SELENIUM");
-        driver.findElement(By.name("q")).click();
         Thread.sleep(2000);
+        hooks.capture("google's search page");
+    }
+
+    @Step
+    @Given("^Search Palmeiras$")
+    public void search_Palmeiras() throws Throwable {
+        Thread.sleep(2000);
+        driver.findElement(By.name("q")).sendKeys("PALMEIRAS");
+        driver.findElement(By.name("q")).click();
+        hooks.capture("Palmeiras search result");
     }
 }

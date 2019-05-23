@@ -64,7 +64,7 @@ public class hooks {
     }
 
     @AfterMethod
-    public void tearDown() throws Exception {
+    public void tearDown() {
         getDriver().quit();
     }
 

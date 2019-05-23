@@ -19,14 +19,6 @@
     <orderEntry type="library" name="Maven: info.cukes:gherkin:2.12.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: info.cukes:cucumber-jvm-deps:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: info.cukes:cucumber-testng:1.2.5" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:4.3.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-core:4.3.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-html:0.2.7" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:gherkin:5.1.0" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:tag-expressions:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:cucumber-expressions:6.2.2" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:datatable:1.1.12" level="project" />
-    <orderEntry type="library" name="Maven: io.cucumber:datatable-dependencies:1.1.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:6.14.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.72" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache-extras.beanshell:bsh:2.0b6" level="project" />
@@ -73,14 +65,12 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.jooq:joor-java-8:0.9.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.12.2" level="project" />
     <orderEntry type="library" name="Maven: io.github.bonigarcia:webdrivermanager:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.10" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Maven: org.rauschig:jarchivelib:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.18" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
   </component>
 </module>

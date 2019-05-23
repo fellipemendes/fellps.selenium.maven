@@ -35,6 +35,7 @@ public class hooks {
         @Override
         public RemoteWebDriver initialValue()
         {
+            System.out.println("--------Override 1-----------------------");
             DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 
             try {
@@ -45,8 +46,7 @@ public class hooks {
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("window-size=1366,768", "--no-sandbox");
-            options.addArguments("window-size=1366,768");
-
+            System.out.println("--------Override 2-----------------------");
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             return new ChromeDriver(options); // can be replaced with other browser drivers
         }
@@ -59,10 +59,14 @@ public class hooks {
     @BeforeMethod(alwaysRun = true)
     @Parameters(value={"browser"})
     public void setupTest (@Optional("chrome")String browser) {
+        System.out.println("--------PASSOU BEFORE METHOD 1-----------------------");
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        System.out.println("--------PASSOU BEFORE METHOD 2-----------------------");
         capabilities.setCapability("browserName", browser);
+        System.out.println("--------PASSOU BEFORE METHOD 3-----------------------");
 
         getInstance().getDriver();
+        System.out.println("--------PASSOU BEFORE METHOD 4-----------------------");
     }
 
     @AfterMethod

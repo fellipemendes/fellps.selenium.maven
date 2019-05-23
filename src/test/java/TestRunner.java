@@ -21,15 +21,24 @@ public class TestRunner {
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() throws Exception {
+        System.out.println("--------BeforeClass 1-----------------------");
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+        System.out.println("--------BeforeClass 2-----------------------");
     }
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
-        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+        System.out.println("--------BeforeClass 1-----------------------");
+        try {
+            testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+        }catch (Exception e) {
+            System.out.println("--------ERRO @Test-----------" + e.getMessage());
+        }
+
     }
     @DataProvider(parallel = true)
     public Object[][] features() {
+        System.out.println("--------DataProvide 1-----------------------");
             return testNGCucumberRunner.provideFeatures();
     }
 
@@ -37,5 +46,8 @@ public class TestRunner {
     public void tearDownClass() {
             testNGCucumberRunner.finish();
     }
+
+
+
 
 }

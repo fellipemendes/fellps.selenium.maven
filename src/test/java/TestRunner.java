@@ -57,7 +57,7 @@ public class TestRunner {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
-    @DataProvider(name = "browser-provider", parallel = true)
+    @DataProvider(name = "scenarios", parallel = true)
     public Object[][] scenarios() {
         return testNGCucumberRunner.provideFeatures();
     }

@@ -12,6 +12,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Description;
 import io.qameta.allure.Story;
+import org.testng.annotations.Test;
 
 @Epic("AGoogle")
 @Feature("Google's Search")
@@ -23,6 +24,7 @@ public class basic{
 
     @Step
     @Description("Googleeeeee")
+    @Test
     @Given("^I access Google$")
     public void i_access_Google() {
         driver.navigate().to("https://www.google.com/");
@@ -31,6 +33,7 @@ public class basic{
     }
 
     @Step
+    @Test
     @Then("^The main page will show up$")
     public void the_main_page_will_show_up() throws Throwable {
         Thread.sleep(2000);
@@ -38,6 +41,7 @@ public class basic{
     }
 
     @Step
+    @Test
     @Given("^Search Palmeiras$")
     public void search_Palmeiras() throws Throwable {
         Thread.sleep(2000);

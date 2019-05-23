@@ -4,13 +4,11 @@ package configurations;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.OutputType;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -24,8 +22,6 @@ public class hooks {
 
     public hooks()
     {
-        //Hooks.driver = (ThreadLocal<WebDriver>) driver;
-        //Do-nothing..Do not allow to initialize this class from outside
     }
     private static hooks instance = new hooks();
 
@@ -48,18 +44,15 @@ public class hooks {
 			}
 
             ChromeOptions options = new ChromeOptions();
-            //options.addArguments("--headless", "window-size=1366,768", "--no-sandbox");
+            options.addArguments("window-size=1366,768", "--no-sandbox");
             options.addArguments("window-size=1366,768");
 
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             return new ChromeDriver(options); // can be replaced with other browser drivers
-            //return new InternetExplorerDriver();
-            //return new ChromeDriver(); // can be replaced with other browser drivers
         }
     };
 
     public WebDriver getDriver() {
-        //Get driver from ThreadLocalMap
         return driver.get();
     }
 
@@ -73,19 +66,12 @@ public class hooks {
         //Remove the ThreadLocalMap element
         driver.remove();
     }
-    /*
+
     @BeforeTest
-    public void start() {
-        System.out.println("-----------2.1");
-        hooks.getInstance().getDriver();
-    }
-*/
-    @Before
     public void TestInitialize() {
         try {
             getInstance().getDriver();
             //WebDriverManager.chromedriver().setup();
-            new Dimension(1366, 768);
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());
         }

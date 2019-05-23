@@ -1,17 +1,14 @@
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.PickleEventWrapper;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.api.testng.CucumberFeatureWrapper;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
-import configurations.hooks;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+
 
 @CucumberOptions(
+        strict = true,
         dryRun = false,
         features = "src/test/resources/features",
         glue = {"configurations", "stepsdefs"},
@@ -21,7 +18,7 @@ import java.net.URL;
                 "json:target/allure-results/AllureTestReport.json",
         })
 
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests {
 
     private TestNGCucumberRunner testNGCucumberRunner;
     private String featureName;
@@ -46,7 +43,6 @@ public class TestRunner {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
-
     @DataProvider(parallel = true)
     public Object[][] features() {
             return testNGCucumberRunner.provideFeatures();
@@ -56,4 +52,5 @@ public class TestRunner {
     public void tearDownClass() {
             testNGCucumberRunner.finish();
     }
+
 }

@@ -31,7 +31,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", browser);
     }
-
+/*
     @BeforeMethod
     public void beforeMethod(Object[] params) {
         CucumberFeatureWrapper cucumberFeature = (CucumberFeatureWrapper) params[0];
@@ -43,6 +43,17 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
+ */
+
+    @BeforeClass(alwaysRun = true)
+    public void setUpClass() throws Exception {
+        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+    }
+
+    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
+    public void feature(CucumberFeatureWrapper cucumberFeature) {
+        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+    }
     @DataProvider(parallel = true)
     public Object[][] features() {
             return testNGCucumberRunner.provideFeatures();

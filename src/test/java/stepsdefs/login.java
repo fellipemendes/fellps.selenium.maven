@@ -20,7 +20,6 @@ public class login {
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 
     @Step
-    @Test
     @Given("^I access página de login do Gmail$")
     public void i_access_página_de_login_do_Gmail() throws Throwable {
         driver.navigate().to("https://accounts.google.com/AccountChooser?service=mail&continue=https://mail.google.com/mail/");
@@ -28,7 +27,6 @@ public class login {
     }
 
     @Step
-    @Test
     @Given("^realizei login no Gmail com usuário incorreto$")
     public void realizei_login_no_Gmail_com_usuário_incorreto() throws Throwable {
         oUtils.waitVisibilityOfElementLocated("id", "identifierId");
@@ -42,7 +40,6 @@ public class login {
     }
 
     @Step
-    @Test
     @Then("^deverá apresentar erro de usuário incorreto$")
     public void deverá_apresentar_erro_de_usuário_incorreto() throws Throwable {
         oUtils.waitVisibilityOfElementLocated("xpath", "//*[@id='password']/div[2]/div[2]/div");

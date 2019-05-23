@@ -1,3 +1,4 @@
+import configurations.hooks;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.api.testng.CucumberFeatureWrapper;
@@ -24,6 +25,19 @@ public class TestRunner {
         System.out.println("--------BeforeClass 1-----------------------");
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         System.out.println("--------BeforeClass 2-----------------------");
+    }
+
+    @BeforeMethod(alwaysRun = true)
+    @Parameters(value={"browser"})
+    public void setupTest (@Optional("chrome")String browser) {
+        System.out.println("--------PASSOU BEFORE METHOD 1-----------------------");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        System.out.println("--------PASSOU BEFORE METHOD 2-----------------------");
+        capabilities.setCapability("browserName", browser);
+        System.out.println("--------PASSOU BEFORE METHOD 3-----------------------");
+
+        hooks.getInstance().getDriver();
+        System.out.println("--------PASSOU BEFORE METHOD 4-----------------------");
     }
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")

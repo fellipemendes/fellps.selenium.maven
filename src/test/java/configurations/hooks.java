@@ -56,18 +56,7 @@ public class hooks {
         return driver.get();
     }
 
-    @Before
-    @Parameters(value={"browser"})
-    public void setupTest (@Optional("chrome")String browser) {
-        System.out.println("--------PASSOU BEFORE METHOD 1-----------------------");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        System.out.println("--------PASSOU BEFORE METHOD 2-----------------------");
-        capabilities.setCapability("browserName", browser);
-        System.out.println("--------PASSOU BEFORE METHOD 3-----------------------");
 
-        getInstance().getDriver();
-        System.out.println("--------PASSOU BEFORE METHOD 4-----------------------");
-    }
 
     @AfterMethod
     public void tearDown() {

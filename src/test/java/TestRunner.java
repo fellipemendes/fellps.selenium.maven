@@ -18,7 +18,7 @@ import org.testng.annotations.*;
                 "json:target/allure-results/AllureTestReport.json",
         })
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner {
 
     private TestNGCucumberRunner testNGCucumberRunner;
     private String featureName;

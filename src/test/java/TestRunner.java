@@ -36,7 +36,7 @@ public class TestRunner {
         capabilities.setCapability("browserName", browser);
         System.out.println("--------PASSOU BEFORE METHOD 3-----------------------");
 
-        hooks.getInstance().getDriver();
+        //hooks.getInstance().getDriver();
         System.out.println("--------PASSOU BEFORE METHOD 4-----------------------");
     }
 

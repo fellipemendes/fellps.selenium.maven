@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8adb9010-2fe0-47b4-9c70-0f9d5eed7224" name="Default" comment="debug">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+    <list default="true" id="8adb9010-2fe0-47b4-9c70-0f9d5eed7224" name="Default" comment="Before">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/configurations/hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/configurations/hooks.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/configurations/hooks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="58" column="11" lean-forward="true" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+            <state relative-caret-position="381">
+              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1048#1959#0" expanded="true" />
@@ -51,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1795#1796#0" expanded="true" />
@@ -65,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/stepsdefs/basic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+            <state relative-caret-position="318">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/stepsdefs/login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+            <state relative-caret-position="-70">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,13 +133,13 @@
         <option value="$PROJECT_DIR$/Jenkinsfile" />
         <option value="$PROJECT_DIR$/src/test/resources/features/login.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/features/basic.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/stepsdefs/basic.java" />
-        <option value="$PROJECT_DIR$/src/test/java/stepsdefs/login.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestRunnerComp.java" />
         <option value="$PROJECT_DIR$/src/test/java/RunCukesTest.java" />
         <option value="$PROJECT_DIR$/TestNG.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/TestRunner.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/stepsdefs/login.java" />
+        <option value="$PROJECT_DIR$/src/test/java/stepsdefs/basic.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestRunner.java" />
         <option value="$PROJECT_DIR$/src/test/java/configurations/hooks.java" />
       </list>
     </option>
@@ -347,20 +347,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557758984631</updated>
-    </task>
-    <task id="LOCAL-00023" summary="ThreadLocal">
-      <created>1558552350568</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1558552350568</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Zalenium">
-      <created>1558552488835</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1558552488835</updated>
     </task>
     <task id="LOCAL-00025" summary="Zalenium">
       <created>1558552568028</created>
@@ -691,7 +677,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558639425025</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Before">
+      <created>1558639814024</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1558639814024</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Before">
+      <created>1558640087146</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1558640087147</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -808,7 +808,8 @@
     <MESSAGE value="Abstract" />
     <MESSAGE value="parallel true" />
     <MESSAGE value="debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug" />
+    <MESSAGE value="Before" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/target/test-classes/FirstClass.class" />
@@ -938,26 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/stepsdefs/login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/stepsdefs/basic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -972,10 +953,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/stepsdefs/login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/stepsdefs/basic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1795#1796#0" expanded="true" />
@@ -986,8 +987,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/configurations/hooks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="58" column="11" lean-forward="true" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+        <state relative-caret-position="381">
+          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1048#1959#0" expanded="true" />

@@ -68,17 +68,18 @@ public class hooks {
         //Remove the ThreadLocalMap element
         driver.remove();
     }
-/*
+
     @Before
     public void TestInitialize() {
         try {
+            hooks.getInstance().getDriver();
             System.out.println("--------PASSOU BEFORE-----------------------");
             //WebDriverManager.chromedriver().setup();
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());
         }
     }
-*/
+
     @After
     public void TearDownTest(Scenario scenario) {
         if (scenario.isFailed()) {

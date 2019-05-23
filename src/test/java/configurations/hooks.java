@@ -56,6 +56,15 @@ public class hooks {
         return driver.get();
     }
 
+    @BeforeMethod(alwaysRun = true)
+    @Parameters(value={"browser"})
+    public void setupTest (@Optional("chrome")String browser) {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", browser);
+
+        getInstance().getDriver();
+    }
+
     @AfterMethod
     public void tearDown() {
         getDriver().quit();
@@ -67,10 +76,10 @@ public class hooks {
         driver.remove();
     }
 
-    @BeforeTest
+    @Before
     public void TestInitialize() {
         try {
-            getInstance().getDriver();
+            System.out.println("--------PASSOU BEFORE-----------------------");
             //WebDriverManager.chromedriver().setup();
         } catch (Exception e) {
             System.out.println("--------ERRO Navegador-----------" + e.getMessage());

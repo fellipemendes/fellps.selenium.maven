@@ -20,15 +20,6 @@ public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
-    @Parameters(value={"browser"})
-    public void setupTest (@Optional("chrome")String browser) {
-        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", browser);
-    }
-
-    @BeforeClass(alwaysRun = true)
     public void setUpClass() throws Exception {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }

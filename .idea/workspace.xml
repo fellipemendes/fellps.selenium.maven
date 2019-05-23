@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8adb9010-2fe0-47b4-9c70-0f9d5eed7224" name="Default" comment="Maven">
+    <list default="true" id="8adb9010-2fe0-47b4-9c70-0f9d5eed7224" name="Default" comment="testClass">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestNG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestNG.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/configurations/hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/configurations/hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepsdefs/basic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepsdefs/basic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/basic.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/basic.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/configurations/hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/configurations/hooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/basic.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/basic.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stepsdefs/login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepsdefs/login.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TestNG.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="187">
+              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -371,20 +363,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557758984631</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Runner correto">
-      <created>1558467021051</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1558467021051</updated>
-    </task>
-    <task id="LOCAL-00006" summary="ChromeDriver local">
-      <created>1558467914005</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1558467914006</updated>
     </task>
     <task id="LOCAL-00007" summary="artifacts">
       <created>1558475085024</created>
@@ -715,7 +693,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558616529235</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Maven">
+      <created>1558617982103</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1558617982104</updated>
+    </task>
+    <task id="LOCAL-00055" summary="testClass">
+      <created>1558618438613</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1558618438613</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -824,7 +816,8 @@
     <MESSAGE value="ThreadLocal" />
     <MESSAGE value="Zalenium" />
     <MESSAGE value="Maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maven" />
+    <MESSAGE value="testClass" />
+    <option name="LAST_COMMIT_MESSAGE" value="testClass" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/target/test-classes/FirstClass.class" />
@@ -983,8 +976,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestNG.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@ import java.net.URL;
         dryRun = false,
         features = "src/test/resources/features",
         glue = {"configurations", "stepsdefs"},
-        tags = {"@basic"},
+        tags = {},
         plugin = {
                 "pretty",
                 "json:target/allure-results/AllureTestReport.json",
@@ -27,15 +27,10 @@ public class TestRunner {
 
     @BeforeClass(alwaysRun = true)
     @Parameters(value={"browser"})
-    public void setupTest (@Optional("chrome")String browser) throws MalformedURLException {
+    public void setupTest (@Optional("chrome")String browser) {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
-        //Set BrowserName
         capabilities.setCapability("browserName", browser);
-        System.out.println("-----------1");
-        //Set Browser to ThreadLocalMap
-        //driver.set(new RemoteWebDriver(new URL("http://192.168.99.100:4444/wd/hub"), capabilities));
     }
 
     @BeforeMethod
@@ -46,7 +41,6 @@ public class TestRunner {
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
-        System.out.println("-----------2.0");
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
@@ -57,7 +51,7 @@ public class TestRunner {
     }
 
     @AfterClass(alwaysRun = true)
-    public void tearDownClass() throws Exception {
+    public void tearDownClass() {
             testNGCucumberRunner.finish();
     }
 }

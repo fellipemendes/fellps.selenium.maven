@@ -16,9 +16,9 @@ import static org.assertj.core.api.Assertions.*;
 
 public class login extends DriverFactory{
 
-    static WebDriver driver = DriverFactory.getDriver();
+    WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();
-    static WebDriverWait wait = new WebDriverWait(driver, 45);
+    WebDriverWait wait = new WebDriverWait(driver, 45);
 
     @Step
     @Given("^I access página de login do Gmail$")

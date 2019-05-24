@@ -134,7 +134,11 @@
             <version>2.11.0</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>${cucumber.type}</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
 
     </dependencies>
 </project>

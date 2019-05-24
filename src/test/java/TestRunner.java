@@ -42,17 +42,18 @@ public class TestRunner {
 
     @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
-        System.out.println("--------BeforeClass 1-----------------------");
+        System.out.println("--------@Test 1-----------------------");
         try {
             testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
         }catch (Exception e) {
-            System.out.println("--------ERRO @Test-----------" + e.getMessage());
+            System.out.println("--------ERRO @Test-----------" + e.getStackTrace());
         }
 
     }
     @DataProvider(parallel = true)
     public Object[][] features() {
         System.out.println("--------DataProvide 1-----------------------");
+        System.out.println(testNGCucumberRunner.provideFeatures());
             return testNGCucumberRunner.provideFeatures();
     }
 

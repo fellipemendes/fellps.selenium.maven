@@ -72,7 +72,7 @@ public class hooks {
     @Before
     public void TestInitialize() {
         try {
-            hooks.getInstance().getDriver();
+            //hooks.getInstance().getDriver();
             System.out.println("--------PASSOU BEFORE-----------------------");
             //WebDriverManager.chromedriver().setup();
         } catch (Exception e) {

@@ -28,15 +28,18 @@ public class TestRunner {
     }
 
     @BeforeMethod(alwaysRun = true)
-    @Parameters(value={"browser"})
-    public void setupTest (@Optional("chrome")String browser) {
+    //@Parameters(value={"browser"})
+    public void setupTest (){//(@Optional("chrome")String browser) {
+        /*
         System.out.println("--------PASSOU BEFORE METHOD 1-----------------------");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         System.out.println("--------PASSOU BEFORE METHOD 2-----------------------");
         capabilities.setCapability("browserName", browser);
         System.out.println("--------PASSOU BEFORE METHOD 3-----------------------");
 
-        //hooks.getInstance().getDriver();
+         */
+
+        hooks.getInstance().getDriver();
         System.out.println("--------PASSOU BEFORE METHOD 4-----------------------");
     }
 

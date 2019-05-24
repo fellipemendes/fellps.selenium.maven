@@ -4,6 +4,7 @@ import configurations.hooks;
 import configurations.utils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import drivermanagement.DriverFactory;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ import org.testng.annotations.Test;
 @Feature("Google's Search")
 public class basic{
 
-    static WebDriver driver = hooks.getInstance().getDriver();
+    static WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 

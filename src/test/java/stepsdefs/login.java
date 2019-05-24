@@ -4,6 +4,7 @@ import configurations.hooks;
 import configurations.utils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import drivermanagement.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class login {
 
-    static WebDriver driver = hooks.getInstance().getDriver();
+    static WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 

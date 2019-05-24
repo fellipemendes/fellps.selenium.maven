@@ -27,9 +27,13 @@ public class basic extends DriverFactory{
     @Description("Googleeeeee")
     @Given("^I access Google$")
     public void i_access_Google() {
-        driver.navigate().to("https://www.google.com/");
-        oUtils.waitVisibilityOfElementLocated("name", "q");
-        hooks.capture("google's search page");
+        try {
+            driver.navigate().to("https://www.google.com/");
+            oUtils.waitVisibilityOfElementLocated("name", "q");
+            hooks.capture("google's search page");
+        }catch (Exception e) {
+            System.out.println("--------ERRO 1-----------" + e.getStackTrace());
+        }
     }
 
     @Step

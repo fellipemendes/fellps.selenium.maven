@@ -19,9 +19,9 @@ import org.testng.annotations.Test;
 @Feature("Google's Search")
 public class basic extends DriverFactory{
 
-    WebDriver driver = DriverFactory.getDriver();
+    static WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();
-     WebDriverWait wait = new WebDriverWait(driver, 45);
+    static WebDriverWait wait = new WebDriverWait(driver, 45);
 
     @Step
     @Description("Googleeeeee")

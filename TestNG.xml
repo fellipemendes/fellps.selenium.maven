@@ -5,8 +5,6 @@
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="TestRunner"/>
-            <class name="stepsdefs.basic"/>
-            <class name="stepsdefs.login"/>
         </classes>
     </test>
 </suite>

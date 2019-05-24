@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class login extends DriverFactory{
 
-    static WebDriver driver = DriverFactory.getDriver();
+    private static WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 

@@ -14,7 +14,7 @@ import io.qameta.allure.Step;
 import static org.assertj.core.api.Assertions.*;
 
 
-public class login {
+public class login extends DriverFactory{
 
     static WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();

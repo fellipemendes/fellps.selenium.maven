@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 
 @Epic("AGoogle")
 @Feature("Google's Search")
-public class basic{
+public class basic extends DriverFactory{
 
     static WebDriver driver = DriverFactory.getDriver();
     static utils oUtils = new utils();

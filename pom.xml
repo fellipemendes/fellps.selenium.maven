@@ -16,6 +16,9 @@
         <selenium.version>3.14.0</selenium.version>
         <cucumber.type>io.cucumber</cucumber.type>
         <cucumber.version>4.0.1</cucumber.version>
+        <!--System properties version-->
+        <threads>5</threads>
+        <browser>chrome</browser>
     </properties>
 
     <build>
@@ -50,6 +53,31 @@
                 <reportVersion>2.7.0</reportVersion>
             </configuration>
         </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>${threads}</threadCount>
+                    <systemProperties>
+                        <browser>${browser}</browser>
+                    </systemProperties>
+                    <includes>
+                        <include>**/*RunnerWD.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

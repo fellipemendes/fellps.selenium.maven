@@ -17,7 +17,7 @@ import static drivermanagement.DriverFactory.instantiateDriverObject;
 @CucumberOptions(
         dryRun = false,
         features = "src/test/resources/features",
-        glue = {"configurations", "stepsdefs"},
+        glue = {"configurations", "stepsdefs", "drivermanagement"},
         tags = {},
         plugin = {
                 "pretty",

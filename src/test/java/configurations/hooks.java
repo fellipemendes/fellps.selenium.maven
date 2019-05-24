@@ -4,6 +4,7 @@ package configurations;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import drivermanagement.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.qameta.allure.Attachment;
@@ -17,9 +18,10 @@ import org.testng.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class hooks {
+public class hooks{
     //public static WebDriver driver;
-
+    //static WebDriver driver = DriverFactory.getDriver();
+/*
     public hooks()
     {
     }
@@ -91,10 +93,10 @@ public class hooks {
         }
         //driver.quit();
     }
-
+*/
     public static byte[] screenShot() {
         byte[] screenshot;
-        screenshot = ((TakesScreenshot) hooks.getInstance().getDriver()).getScreenshotAs(OutputType.BYTES);
+        screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
         return screenshot;
     }
 

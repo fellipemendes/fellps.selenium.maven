@@ -90,8 +90,9 @@ public class TestRunner {
     }
 
     @Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
-    public void feature(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cucumberFeature) throws Throwable {
+    public void scenarios(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cucumberFeature) throws Throwable {
         testNGCucumberRunner.runScenario(pickleEvent.getPickleEvent());
+
 
     }
 

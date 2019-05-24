@@ -1,10 +1,17 @@
-import configurations.hooks;
 import cucumber.api.CucumberOptions;
-import cucumber.api.testng.TestNGCucumberRunner;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.testng.CucumberFeatureWrapper;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
+import cucumber.api.testng.PickleEventWrapper;
+import cucumber.api.testng.TestNGCucumberRunner;
+import drivermanagement.DriverFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
+import static drivermanagement.DriverFactory.instantiateDriverObject;
 
 
 @CucumberOptions(
@@ -18,6 +25,7 @@ import org.testng.annotations.*;
         })
 
 public class TestRunner {
+    /*
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
@@ -28,18 +36,15 @@ public class TestRunner {
     }
 
     @BeforeMethod(alwaysRun = true)
-    //@Parameters(value={"browser"})
-    public void setupTest (){//(@Optional("chrome")String browser) {
-        /*
+    @Parameters(value={"browser"})
+    public void setupTest (@Optional("chrome")String browser) {
         System.out.println("--------PASSOU BEFORE METHOD 1-----------------------");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         System.out.println("--------PASSOU BEFORE METHOD 2-----------------------");
         capabilities.setCapability("browserName", browser);
         System.out.println("--------PASSOU BEFORE METHOD 3-----------------------");
 
-         */
-
-        hooks.getInstance().getDriver();
+        //hooks.getInstance().getDriver();
         System.out.println("--------PASSOU BEFORE METHOD 4-----------------------");
     }
 
@@ -55,7 +60,6 @@ public class TestRunner {
     }
     @DataProvider(parallel = true)
     public Object[][] features() {
-        System.out.println("--------DataProvide 1-----------------------");
         System.out.println(testNGCucumberRunner.provideFeatures());
             return testNGCucumberRunner.provideFeatures();
     }
@@ -65,7 +69,40 @@ public class TestRunner {
             testNGCucumberRunner.finish();
     }
 
+     */
+
+    private TestNGCucumberRunner testNGCucumberRunner;
+
+    @Before
+    public void beforeSuite() {
+        instantiateDriverObject();
+    }
+
+    @After
+    public void afterSuite() {
+        DriverFactory.closeAllDriverObjects();
+    }
 
 
+    @BeforeClass(alwaysRun = true)
+    public void setUpClass() {
+        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+    }
+
+    @Test(groups = "cucumber", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
+    public void feature(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cucumberFeature) throws Throwable {
+        testNGCucumberRunner.runScenario(pickleEvent.getPickleEvent());
+
+    }
+
+    @DataProvider
+    public Object[][] scenarios() {
+        return testNGCucumberRunner.provideScenarios();
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDownClass() {
+        testNGCucumberRunner.finish();
+    }
 
 }

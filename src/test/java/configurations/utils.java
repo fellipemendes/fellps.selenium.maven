@@ -1,5 +1,6 @@
 package configurations;
 
+import drivermanagement.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,9 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class utils {
+public class utils extends DriverFactory {
 
-    static WebDriver driver = hooks.getInstance().getDriver();
+    static WebDriver driver = DriverFactory.getDriver();
     static WebDriverWait wait = new WebDriverWait(driver, 45);
 
     public void waitElementToBeClickable (String locator, String element) {

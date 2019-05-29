@@ -30,8 +30,8 @@ public class RunCukesTest extends AbstractTestNGCucumberTests {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
-//    @Test(groups = "cucumber scenarios", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
-//    public void scenario(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cucumberFeature) throws Throwable{
-//        testNGCucumberRunner.runScenario(pickleEvent.getPickleEvent());
-//    }
+    @Test(groups = "cucumber scenarios", description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
+    public void scenario(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cucumberFeature) throws Throwable{
+        testNGCucumberRunner.runScenario(pickleEvent.getPickleEvent());
+    }
 }
